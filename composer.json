@@ -3,7 +3,7 @@
     "description": "UserWay accessibility integration module",
     "type": "magento2-module",
     "prefer-stable": true,
-    "version": "1.0.0",
+    "version": "2.0.0",
     "license": [
         "MIT"
     ],
