@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <sruserway>
+            <general>
+                <position>5</position>
+                <size>small</size>
+                <language>he</language>
+                <color>#000000</color>
+                <type>1</type>
+                <statement_text>הצהרת נגישות</statement_text>
+                <mobile>true</mobile>
+                <custom_css>
+<![CDATA[
+/* use !important to override native styles */
+.userway_buttons_wrapper {}
+]]>
+                </custom_css>
+            </general>
+        </sruserway>
+    </default>
+</config>

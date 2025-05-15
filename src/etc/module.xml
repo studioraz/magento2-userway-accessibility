@@ -9,6 +9,7 @@
     <module name="SR_UserwayAccessibility" setup_version="1.0.0">
         <sequence>
             <module name="SR_Base"/>
+            <module name="SR_Codemirror"/>
         </sequence>
     </module>
 </config>

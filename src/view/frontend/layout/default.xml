@@ -1,11 +1,16 @@
 <?xml version="1.0"?>
-<!--
-  ~ Copyright © 2023 Studio Raz. All rights reserved.
-  ~ See LICENSE.txt for license details.
-  -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <referenceBlock name="head.additional">
-        <block name="userway.accessibility" template="SR_UserwayAccessibility::html/userway.phtml" />
-    </referenceBlock>
+    <body>
+        <referenceContainer name="before.body.end">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="userway.accessibility"
+                   template="SR_UserwayAccessibility::html/userway.phtml"
+                   ifconfig="sruserway/general/enabled">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">SR\UserwayAccessibility\ViewModel\WidgetConfig</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
 </page>

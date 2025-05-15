@@ -1,1 +1,28 @@
-<script src="https://cdn.userway.org/widget.js" data-account="G2yt4OCdup"></script>
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \SR\UserwayAccessibility\ViewModel\WidgetConfig $viewModel */
+$viewModel = $block->getViewModel();
+?>
+<script>
+(function(d) {
+    let s = d.createElement("script");
+    s.setAttribute("data-account", "<?= $block->escapeHtml($viewModel->getAccount()) ?>");
+    s.setAttribute("data-position", "<?= $block->escapeHtml($viewModel->getPosition()) ?>");
+    s.setAttribute("data-size", "<?= $block->escapeHtml($viewModel->getSize()) ?>");
+    s.setAttribute("data-language", "<?= $block->escapeHtml($viewModel->getLanguage()) ?>");
+    s.setAttribute("data-color", "<?= $block->escapeHtml($viewModel->getColor()) ?>");
+    s.setAttribute("data-type", "<?= $block->escapeHtml($viewModel->getType()) ?>");
+    s.setAttribute("data-statement_text", "<?= $block->escapeHtml($viewModel->getStatementText()) ?>");
+    s.setAttribute("data-statement_url", "<?= $block->escapeUrl($viewModel->getStatementUrl()) ?>");
+    s.setAttribute("data-mobile", "<?= $block->escapeHtml($viewModel->getMobile()) ?>");
+    s.setAttribute("src", "https://cdn.userway.org/widget.js");
+    (d.body || d.head).appendChild(s);
+})(document);
+</script>
+<?php if ($customCSS = $viewModel->getCustomCSS()): ?>
+<style>
+    <?= $block->escapeHtml($customCSS) ?>
+</style>
+<?php endif ?>
+
+

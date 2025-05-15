@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="sruserway" translate="label" sortOrder="900" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>UserWay Accessibility</label>
+            <tab>general</tab>
+            <resource>SR_UserwayAccessibility::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>UserWay Widget Settings</label>
+
+                <field id="enabled" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable Widget</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Toggle to turn the UserWay accessibility widget on or off.</comment>
+                </field>
+
+                <field id="account" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Account ID</label>
+                    <validate>required-entry</validate>
+                    <comment>Your unique UserWay account identifier (provided by UserWay).</comment>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+
+                <field id="position" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Position</label>
+                    <source_model>SR\UserwayAccessibility\Model\Config\Source\Position</source_model>
+                    <comment>Screen position where the widget launcher appears.</comment>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+
+                <field id="size" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Size</label>
+                    <source_model>SR\UserwayAccessibility\Model\Config\Source\Size</source_model>
+                    <comment>Size of the widget launcher button (small or large).</comment>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+
+                <field id="language" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Language Code (e.g., en, he)</label>
+                    <validate>required-entry</validate>
+                    <comment>Locale for widget interface translations.</comment>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+
+                <field id="color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Color</label>
+                    <validate>required-entry</validate>
+                    <comment>Hex color code for the widget icon.</comment>
+                    <frontend_model>SR\Base\Model\Config\Source\ColorPicker</frontend_model>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+
+                <field id="type" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Icon Type</label>
+                    <source_model>SR\UserwayAccessibility\Model\Config\Source\Type</source_model>
+                    <comment>Icon shape used for the accessibility launcher.</comment>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+
+                <field id="statement_text" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Statement Text</label>
+                    <validate>required-entry</validate>
+                    <comment>Text label for the accessibility statement link.</comment>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+
+                <field id="statement_url" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Statement URL</label>
+                    <validate>required-entry</validate>
+                    <comment>URL linking to your full accessibility statement.</comment>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+
+                <field id="mobile" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable on Mobile</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Allow the widget to show on mobile devices.</comment>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+
+                <field id="custom_css" translate="label" type="textarea" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Custom CSS</label>
+                    <frontend_model>SR\Codemirror\Block\Adminhtml\System\Config\Form\Field\Css</frontend_model>
+                    <comment><![CDATA[Custom CSS to adjust widget styling or position.]]></comment>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

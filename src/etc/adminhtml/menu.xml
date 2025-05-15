@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright © 2024 Studio Raz. All rights reserved.
+  ~ See LICENCE file for license details.
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="SR_UserwayAccessibility::sruserway"
+             parent="SR_Base::srbase"
+             resource="SR_UserwayAccessibility::sruserway"
+             module="SR_UserwayAccessibility"
+             title="UserWay Accessibility"
+             translate="title"
+             sortOrder="250"/>
+
+        <add id="SR_UserwayAccessibility::sruserway_settings"
+             parent="SR_UserwayAccessibility::sruserway"
+             resource="SR_UserwayAccessibility::sruserway_settings"
+             module="SR_UserwayAccessibility"
+             title="Settings"
+             translate="title"
+             action="adminhtml/system_config/edit/section/sruserway"
+             sortOrder="100"/>
+    </menu>
+</config>
