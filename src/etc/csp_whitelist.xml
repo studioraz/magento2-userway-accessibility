@@ -17,6 +17,7 @@
         <policy id="connect-src">
             <values>
                 <value id="userway-connect-cdn" type="host">cdn.userway.org</value>
+                <value id="userway-connect-api" type="host">api.userway.org</value>
             </values>
         </policy>
 
