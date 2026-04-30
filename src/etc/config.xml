@@ -12,8 +12,10 @@
                 <statement_text>הצהרת נגישות</statement_text>
                 <mobile>true</mobile>
                 <custom_css>
-<![CDATA[
-/* use !important to override native styles */
+<![CDATA[/* use !important to override native styles */
+.uwy, body .uwy {
+    z-index:10 !important;
+}
 .userway_buttons_wrapper {}
 ]]>
                 </custom_css>
